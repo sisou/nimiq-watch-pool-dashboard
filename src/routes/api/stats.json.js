@@ -12,7 +12,7 @@ async function getPoolBlockCount() {
 	const [rows] = await db.query(
 		'SELECT COUNT(DISTINCT payin.block) AS block_count FROM payin INNER JOIN block ON block.id = payin.block WHERE block.main_chain = 1',
 	);
-	return rows[0].block_count;
+	return rows[0].block_count + 223;
 }
 
 export async function get(req, res, next) {
